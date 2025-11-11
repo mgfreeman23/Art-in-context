@@ -38,6 +38,10 @@ public class AppController {
             @RequestParam String context,
             @RequestParam(required=false) String artworkTitle
     ) {
+        response.addHeader("Cache-Control", "no-cache");
+        response.addHeader("X-Accel-Buffering", "no");
+        response.addHeader("Connection", "keep-alive");
+        
         System.out.println(pythonServiceUrl);
         final boolean artworkTitleExists = artworkTitle != null && !artworkTitle.isBlank();
         if(!artworkTitleExists){
