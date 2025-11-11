@@ -97,11 +97,11 @@ export const performSearch = async (  searchParams,
         const artistName = searchParams.artistName;
         const baseUrl =
               process.env.NODE_ENV === "production"
-            ? "https://java-service-p4og.onrender.com"
+            ? "https://art-in-context.onrender.com"
             : "http://localhost:8080";
-        console.log(baseUrl);
+        
         let searchUrl = `${baseUrl}/api/agent?artistName=${artistName}&context=${scope}`;
-
+        console.log(searchUrl);
         if("artworkTitle" in searchParams){
             searchUrl += "&artworkTitle=" + searchParams.artworkTitle;
         }
