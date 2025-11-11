@@ -36,7 +36,8 @@ public class AppController {
     public SseEmitter searchWithAgents(
         @RequestParam String artistName,
             @RequestParam String context,
-            @RequestParam(required=false) String artworkTitle
+            @RequestParam(required=false) String artworkTitle,
+            HttpServletResponse response
     ) {
         response.addHeader("Cache-Control", "no-cache");
         response.addHeader("X-Accel-Buffering", "no");
